@@ -38,6 +38,7 @@ void SLL::printSLL() {
 
 void SLL::addFirst(int x) { // 3 pts
 	first = new SNode (x);
+	size++;
 	//make a new list of only one node, data is x
 }
 void SLL::addAtFront(int x) {  //3 pts
@@ -50,12 +51,18 @@ void SLL::addAtFront(int x) {  //3 pts
 		SNode *n = new SNode(x);
 		n->next = first;
 		first = n;
+		size++;
 	}
+
 	//add a new node to the front of the list with data being x
 }
 
 void SLL::push(int x) { //6 pts
 	//add a new node to the end of the list, with data x
+	SNode *n = new SNode(x);
+	last->next=n;
+	size ++;
+
 }
 
 void SLL::addAtK(int x, int k){
@@ -76,6 +83,9 @@ void SLL::addAtK(int x, int k){
 }
 void SLL::join(SLL *list2){ //3 pts
 	//join the list with list2, making the current list one longer list
+	last->next=list2->first;
+	size = size + list2->size;
+
 }
 
 int SLL::pop() {
@@ -104,6 +114,12 @@ int SLL::pop() {
 }
 SNode *SLL::findKth(int k) { //4 pts
 	// find the node at the kth location and return it
+	SNode *tmp = first;
+	for (int i=0; i<k+1; i++){
+		tmp = tmp->next;
+	}//for
+
+	return tmp;
 }
 int SLL::findK(int k) {
 	SNode *tmp = first;
@@ -121,6 +137,11 @@ int SLL::findK(int k) {
 }
 int SLL::remFirst() { //3 pts
 	//remove the first node from the list, returning its data
+	SNode *second = first->next;
+	delete first;
+	first = second;
+	size --;
+
 }
 int SLL::remKth(int k) {
 	if (k < size && k > 0) {
