@@ -19,12 +19,13 @@ using namespace std;
 
 int main() {
 	srand(time(NULL));
-	/*
 	cout << "SLL" << endl;
+
 // Testing SLL
 	SLL *list = new SLL;
 	list->addFirst(rand()%50);
 	list->printSLL();
+
 	for (int i = 0; i < 10; i++) {
 		if (i == 5) {
 			list->push(42);
@@ -35,6 +36,7 @@ int main() {
 		}
 		list->printSLL();
 	}
+
 	SNode *s = list->findKth(6);
 	int y = s->getData();
 	cout << y << endl;
@@ -72,7 +74,7 @@ int main() {
 	cout << endl;
 	list->join(l2);
 	list->printSLL();
-
+/*
 //Testing DLL
 	cout << "DLL" << endl << endl;
 	DLL *listd = new DLL;
@@ -125,7 +127,7 @@ int main() {
 	listd->join(ld2);
 	listd->printDLL();
 	listd->printRevDLL();
-	*/
+
 	DLL *list1 = new DLL;
 	list1->addFirst(rand()%50);
 	list1->printDLL();
@@ -159,5 +161,6 @@ int main() {
 	list2->printDLL();
 	list1->Merge2(list2);
 	list1->printDLL();
+*/
 }
 

@@ -29,6 +29,7 @@ public:
 	int remFirst();
 	int remKth(int k);
 	void reverseList();
+	void reverse(SNode* p1, SNode* p2, SNode* p3);
 };
 
 
