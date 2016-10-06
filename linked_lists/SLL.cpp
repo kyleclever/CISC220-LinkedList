@@ -49,6 +49,8 @@ void SLL::printSLL() {
 
 void SLL::addFirst(int x) { // 3 pts
 	first = new SNode (x);
+	//todo
+	last = first;
 	size++;
 	//make a new list of only one node, data is x
 }
@@ -70,16 +72,11 @@ void SLL::addAtFront(int x) {  //3 pts
 
 void SLL::push(int x) { //6 pts
 	//add a new node to the end of the list, with data x
-	cout << "Hi" << endl;
+	//last might be the problem here
 
-	SNode *n = new SNode(x);
+	last->next = new SNode(x);
+	last = last -> next;
 
-
-	last->next = n;
-
-	cout << "Hi" << endl;
-	n->next = NULL;
-	cout << "Hi" << endl;
 	size ++;
 
 }
@@ -103,6 +100,7 @@ void SLL::addAtK(int x, int k){
 void SLL::join(SLL *list2){ //3 pts
 	//join the list with list2, making the current list one longer list
 	last->next=list2->first;
+	last = list2->last;
 	size = size + list2->size;
 
 }
