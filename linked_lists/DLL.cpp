@@ -74,6 +74,36 @@ void DLL::push(int x) { //2 pts
 	n->next = NULL;
 	size ++;
 }
+void DLL::addAtK(int x, int k){ //4 pts
+	SNode* ptr = first;
+	if(k == 0) //Add at the beginning
+	{
+		addAtFront(x);
+	}
+	else if(k == size) //Add at the end
+	{
+		push(x);
+	}
+	else
+	{
+		//Traverse
+		for(int i = 0; i < k; i++)
+		{
+			ptr = ptr->next;
+		}
+
+		SNode* ptrNxt = ptr->next;
+		SNode toAdd = new SNode(x);
+
+		//Swap pointers
+		ptr->next = toAdd;
+		toAdd->prev = ptr;
+		toAdd->next = ptrNxt;
+		ptrNxt->prev = toAdd;
+		size++;
+
+	}
+}
 
 void DLL::addAtK(int x, int k){ //4 pts
 //add at position k a new node with x as the data
