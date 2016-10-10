@@ -77,6 +77,22 @@ void DLL::push(int x) { //2 pts
 
 void DLL::addAtK(int x, int k){ //4 pts
 //add at position k a new node with x as the data
+	DNode *tmp = first;
+		if (k==0) {
+			addAtFront(x);
+		}
+		if (k < size  && k >= 0) {			//TODO ///
+			for (int i = 0; i < k-1; i++) {
+				tmp = tmp->next;
+			}
+			DNode *tmp2 = tmp->next;
+
+			tmp->next = new DNode(x);
+
+			tmp->next->next = tmp2;    // add prev. pointer - >
+
+			size++;
+		}
 }
 void DLL::join(DLL *list2){ //2 pts
 // join list 2 to the end of the list, modifying the size of the list
