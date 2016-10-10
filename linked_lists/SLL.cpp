@@ -156,8 +156,13 @@ int SLL::remFirst() { //3 pts
 	//remove the first node from the list, returning its data
 	int data = first->data;
 	SNode *second = first->next;
+	cout << "testing1"<<endl;
+	cout << "First's Data: " << data << endl;
 	delete first;
+	cout << "testin2"<<endl;
 	first = second;
+
+	cout << "testin3"<<endl;
 	size --;
 	return data;
 }
@@ -215,10 +220,13 @@ void SLL::reverseList(){ //10 pts
 		return;
 	}
 	else
-	{
-		SNode* p1 = first;
+	{	SNode* p1 = first;
 		SNode* p2 = first->next;
 		SNode* p3 = first->next->next;
+		p1->next = NULL;
+		SNode* temp = first;
+		first = last;
+		last = temp;
 		reverse(p1,p2,p3);
 	}
 }

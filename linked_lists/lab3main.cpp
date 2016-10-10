@@ -26,6 +26,7 @@ int main() {
 	list->addFirst(rand()%50);
 	list->printSLL();
 
+	cout << "push" << endl;
 	for (int i = 0; i < 10; i++) {
 		if (i == 5) {
 			list->push(42);
@@ -37,27 +38,40 @@ int main() {
 		list->printSLL();
 	}
 
+	cout << "\nFind Kth" << endl;
 	SNode *s = list->findKth(6);
 	int y = s->getData();
 	cout << y << endl;
 	int x = list->findK(42);
+
+	cout << "\nAdd at K" << endl;
 	cout << x << endl;
 	list->addAtK(55,4);
 	list->printSLL();
+
+	cout << "\nAdd at K again" << endl;
 	list->addAtK(60,0);
 	list->printSLL();
+
+	cout << "\nPop" << endl;
 	x = list->pop();
 	cout << x << endl;
 	list->printSLL();
 	x = list->pop();
 	cout << x << endl;
 	list->printSLL();
+
+	cout << "\nRemove First" << endl;
 	x = list->remFirst();
 	cout << x << endl;
 	list->printSLL();
+
+	cout << "\nRemove First" << endl;
 	x = list->remFirst();
 	cout << x << endl;
 	list->printSLL();
+
+	cout << "\n Remove kth" << endl;
 	x = list->remKth(3);
 	cout << x << endl;
 	list->printSLL();
@@ -71,9 +85,15 @@ int main() {
 		l2->push(rand()%50);
 	}
 	l2->printSLL();
-	cout << endl;
+	cout << "\nJoin" << endl;
 	list->join(l2);
 	list->printSLL();
+
+
+	cout << "\nReverse" << endl;
+	list->reverseList();
+	list->printSLL();
+
 /*
 //Testing DLL
 	cout << "DLL" << endl << endl;
