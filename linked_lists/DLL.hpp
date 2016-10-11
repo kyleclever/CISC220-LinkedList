@@ -28,6 +28,8 @@ public:
 	int pop();
 	DNode *findKth(int k);
 	int findK(int k);
+	void reverse(DNode* p1, DNode* p2, DNode* p3);
+	void RecursiveReverse(DLL *l2);
 	int remFirst();
 	int remKth(int k);
 	void sortDLL();

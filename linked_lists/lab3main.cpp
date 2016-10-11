@@ -61,23 +61,23 @@ int main() {
 	cout << x << endl;
 	list->printSLL();
 
-	cout << "\nRemove First" << endl;
-	x = list->remFirst();
-	cout << x << endl;
-	list->printSLL();
+//	cout << "\nRemove First" << endl;
+//	x = list->remFirst();
+//	cout << x << endl;
+//	list->printSLL();
+//
+//	cout << "\nRemove First" << endl;
+//	x = list->remFirst();
+//	cout << x << endl;
+//	list->printSLL();
 
-	cout << "\nRemove First" << endl;
-	x = list->remFirst();
-	cout << x << endl;
-	list->printSLL();
-
-	cout << "\n Remove kth" << endl;
-	x = list->remKth(3);
-	cout << x << endl;
-	list->printSLL();
-	x = list->remKth(4);
-	cout << x << endl;
-	list->printSLL();
+//	cout << "\n Remove kth" << endl;
+//	x = list->remKth(3);
+//	cout << x << endl;
+//	list->printSLL();
+//	x = list->remKth(4);
+//	cout << x << endl;
+//	list->printSLL();
 
 	SLL *l2 = new SLL;
 	l2->addFirst(rand()%50);

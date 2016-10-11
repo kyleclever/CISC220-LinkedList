@@ -179,37 +179,6 @@ int SLL::remKth(int k) {
 		return x;
 	}// if
 }
-//void SLL::reverseList(){ //10 pts
-//	//Reverses the list, after completed, the last should be the first
-//	//in the list and the first should be the last
-//	//Challenge - I did this with one pass across the list
-//
-//	SNode *temphead = first;
-//	SNode *tempRest = NULL;
-//	SNode *tempNext = first->next;
-//
-//
-//	if (first == NULL){
-//	        return;}
-//
-//	last = first;
-//
-//	while (tempRest != NULL) {
-//	         // Step1: Take out the next node
-//	   	tempNext = tempRest;
-//	        //Step2: Update the pointer of rest nodes after taking out the first
-//	   	tempRest = tempRest->next;
-//	        //Step3: Add the taken out node to the new list
-//	    tempNext->next = temphead;
-//	      //Step4: Update the new temp head node
-//	    temphead = tempNext;
-//	        // Repeat Step 1-4
-//	    }
-//	 first = temphead;
-//	 last->next = NULL;
-//
-//}
-
 
 void SLL::reverseList(){ //10 pts
 	//Reverses the list, after completed, the last should be the first
@@ -220,23 +189,24 @@ void SLL::reverseList(){ //10 pts
 		return;
 	}
 	else
-	{	SNode* p1 = first;
+	{	cout << first->data << ", " <<last->data << endl;
+		SNode* p1 = first;
 		SNode* p2 = first->next;
 		SNode* p3 = first->next->next;
 		p1->next = NULL;
 		SNode* temp = first;
 		first = last;
 		last = temp;
+		cout << first->data << ", " << last->data << endl;
 		reverse(p1,p2,p3);
+		cout << first->data << ", " << last->data << endl;
 	}
 }
 
 void SLL::reverse(SNode* p1, SNode* p2, SNode* p3)
 {
 	if(p3 == NULL)
-
-	{
-		p2->next = p1;
+	{	p2->next = p1;
 		return;
 	}
 	else
