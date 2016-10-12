@@ -105,7 +105,7 @@ int main() {
 	cout << "\n\n============================\n\nDLL\n" << endl;
 
 	//Generate new list
-	cout << "\nGenerate a new list (push * 42)" << endl;
+	cout << "\nGenerate a new list" << endl;
 	DLL *listd = new DLL;
 	listd->addFirst(rand()%50);
 	listd->printDLL();
@@ -124,6 +124,7 @@ int main() {
 	DNode *s2 = listd->findKth(6);
 	int y2 = s2->getData();
 	cout << y2 << endl;
+
 
 	cout << "\nFind kth(42)" << endl;
 	int x2 = listd->findK(42);
@@ -162,11 +163,6 @@ int main() {
 	cout << x2 << endl;
 	listd->printDLL();
 
-	cout << "\nRemove kth(4)" << endl;
-	x2 = listd->remKth(4);
-	cout << x2 << endl;
-	listd->printDLL();
-
 	cout << "\nMake a new list" << endl;
 	DLL *ld2 = new DLL;
 	ld2->addFirst(rand()%50);
@@ -181,7 +177,14 @@ int main() {
 	listd->printDLL();
 	listd->printRevDLL();
 
-	cout << "\nAdd First" << endl;
+	cout << "\nReverse" << endl;
+
+	listd->RecursiveReverse(listd);   //TODO
+	listd->printDLL();
+	listd->printRevDLL();
+
+
+	cout << "\nNew list and Add First" << endl;
 	DLL *list1 = new DLL;
 	list1->addFirst(rand()%50);
 	list1->printDLL();
@@ -197,32 +200,33 @@ int main() {
 		}
 	}
 	list1->printDLL();
-	list1->sortDLL();
-	list1->printDLL();
 
-	cout << "\nGenerate another new list (push * 42)" << endl;
-	DLL *list2 = new DLL;
-	list2->addFirst(rand()%50);
-	list2->printDLL();
-	for (int i = 0; i < 8; i++) {
-		if (i == 4) {
-			list2->push(42);
-			i++;
-		}
-		else {
-			list2->push(rand()%50);
-		}
-	}
+//	list1->sortDLL();
+//	list1->printDLL();
 
-
-	list2->printDLL();
-
-	cout << "\nSort" << endl;
-	list2->sortDLL();
-	list2->printDLL();
-
-	cout << "\nMerge" << endl;
-	list1->Merge2(list2);
-	list1->printDLL();
+//	cout << "\nGenerate another new list (push * 42)" << endl;
+//	DLL *list2 = new DLL;
+//	list2->addFirst(rand()%50);
+//	list2->printDLL();
+//	for (int i = 0; i < 8; i++) {
+//		if (i == 4) {
+//			list2->push(42);
+//			i++;
+//		}
+//		else {
+//			list2->push(rand()%50);
+//		}
+//	}
+//
+//
+//	list2->printDLL();
+//
+//	cout << "\nSort" << endl;
+//	list2->sortDLL();
+//	list2->printDLL();
+//
+//	cout << "\nMerge" << endl;
+//	list1->Merge2(list2);
+//	list1->printDLL();
 }
 

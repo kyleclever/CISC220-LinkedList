@@ -47,8 +47,7 @@ void DLL::printRevDLL() {
 void DLL::addFirst(int x) { //2 pts
 	//add very first element to list
 	first = new DNode (x);
-	first->next = last;
-	first->prev = NULL;
+	last = first;
 	size++;
 }
 void DLL::addAtFront(int x) { //2 pts
@@ -60,9 +59,9 @@ void DLL::addAtFront(int x) { //2 pts
 	else
 	{
 		DNode *n = new DNode(x);
-		n->prev = NULL;
 		n->next = first;
 		first->prev=n;
+		//first = first->prev; //TODO
 		size++;
 	}
 }
@@ -70,8 +69,9 @@ void DLL::addAtFront(int x) { //2 pts
 void DLL::push(int x) { //2 pts
 	// add a new node to the end of the list
 	DNode *n = new DNode(x);
-	n->prev = n;
-	n->next = NULL;
+	last->next = n;
+	n->prev = last;
+	last = last->next;
 	size ++;
 }
 void DLL::addAtK(int x, int k){ //4 pts
@@ -87,7 +87,7 @@ void DLL::addAtK(int x, int k){ //4 pts
 	}
 	else
 	{	//Traverse
-		for(int i = 0; i < k; i++)
+		for(int i = 0; i < k-1; i++)
 		{
 			ptr = ptr->next;
 		}
@@ -109,8 +109,7 @@ void DLL::join(DLL *list2){ //2 pts
 	// join list 2 to the end of the list, modifying the size of the list
 	last->next=list2->first;
 	list2->first->prev = last;
-
-	last = list2->last;
+	last = NULL;
 	size += list2->size;
 }
 
@@ -130,7 +129,20 @@ int DLL::pop() { //5 pts
 }
 DNode *DLL::findKth(int k) {
 	//find the element at the kth position and returning a pointer to that node
-	return 0;
+	DNode* ptr = first;
+	if(k > size)
+	{
+		cout << "Out of bounds, returning last element" << endl;
+		return last;
+	}
+	else
+	{
+		for(int i = 0; i < k; i++)
+		{
+			ptr = ptr->next;
+		}
+		return ptr;
+	}
 }
 int DLL::findK(int k) {
 	DNode *tmp = first;
@@ -180,7 +192,7 @@ int DLL::remKth(int k) { //4 pts
 		return 0;
 	}
 }
-void DLL::RecursiveReverse(DLL *l2){
+void DLL::RecursiveReverse(DLL *l2){ //TODO
 	//If there's only 1 node...
 	if(l2->size <2){
 		return;
@@ -213,7 +225,7 @@ void DLL::reverse(DNode* p1, DNode* p2, DNode* p3)
 	}
 }
 
-void DLL::sortDLL() {
+void DLL::sortDLL() { //TODO
 	DLL* list2 = new DLL();
 	DNode* sortedFirst = list2->first;
 	DNode* ptr = first;
@@ -238,19 +250,13 @@ void DLL::sortDLL() {
 		}
 	}
 	for(ptr2 = list2->first; ptr2->next != NULL; ptr2 = ptr->next)
-	last = ptr2;
+		last = ptr2;
 	first = sortedFirst;
 }
 
-void DLL::Merge2(DLL *l2) { //10 pts
-	sortDLL();
-	l2->sortDLL();
-
-
-
-
-
-
+void DLL::Merge2(DLL *l2) { //10 pts //TODO
+	//sortDLL();
+	//l2->sortDLL();
 
 	//Merge two sorted lists into one longer sorted list, and setting
 	//the current list to the longer sorted list
@@ -288,11 +294,14 @@ void DLL::Merge2(DLL *l2) { //10 pts
 	// n=3,4,7,8,12,12,13,15,22,23,24,27
 	// l1 = 29    l2
 	// n=3,4,7,8,12,12,13,15,22,23,24,27,29
+//
 }
 void DLL::RemoveDuplicates() { //12pts
 	// assumes the list is unsorted, removes all duplicates from the list
 	//Note how massively easier this would be if we just sorted the list first...
 	// Note also that you can use a helper function if you like
+	//TODO
+
 }
 
 
