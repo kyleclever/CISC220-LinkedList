@@ -10,7 +10,7 @@
 
 #include "DNode.hpp"
 
-class DLL {
+class DLL {int DLL::*RemoveDuplicatest(DNode *list3)
 	DNode *first;
 	DNode *last;
 	int size;
@@ -35,6 +35,9 @@ public:
 	void sortDLL();
 	void Merge2(DLL *l2);
 	void RemoveDuplicates();
+
+//	void DLL::*RemoveDuplicatest(DNode *list3);
+//	int DLL:: *getNextElement(DNode *list3);
 };
 
 

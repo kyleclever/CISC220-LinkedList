@@ -9,6 +9,7 @@
 #include "DNode.hpp"
 #include <iostream>
 #include <stdlib.h>
+#include <map>
 using namespace std;
 
 DLL::DLL(){
@@ -296,14 +297,30 @@ void DLL::Merge2(DLL *l2) { //10 pts //TODO
 	// n=3,4,7,8,12,12,13,15,22,23,24,27,29
 //
 }
-void DLL::RemoveDuplicates() { //12pts
-	// assumes the list is unsorted, removes all duplicates from the list
-	//Note how massively easier this would be if we just sorted the list first...
-	// Note also that you can use a helper function if you like
-	//TODO
+int DLL:: *getNextElement(DNode *list3);
 
-}
-
-
-
+//void DLL::*RemoveDuplicatest(DNode *list3) { //12pts
+//	// assumes the list is unsorted, removes all duplicates from the list
+//	//Note how massively easier this would be if we just sorted the list first...
+//	// Note also that you can use a helper function if you like
+//	//TODO
+//
+//	list3->sortDLL();
+//	DNode *currNode = list3;
+//	DNode *nextNode = NULL;
+//	while (currNode != NULL){
+//		nextNode = getNextElement (currNode);
+//		currNode->next=nextNode;
+//		currNode = nextNode;
+//	}// while
+//	return list3;
+//}
+//
+//int DLL:: *getNextElement(DNode *list3){
+//    while ((list3 != NULL) && (list3->next != NULL)
+//          && (list3->data == list3->next->data)){
+//    	list3 = list3->next;
+//    }
+//    return list3->next;
+//}
 
