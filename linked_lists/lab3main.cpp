@@ -21,7 +21,7 @@ int main() {
 	srand(time(NULL));
 	cout << "SLL" << endl;
 
-// Testing SLL
+	// Testing SLL
 	SLL *list = new SLL;
 	list->addFirst(rand()%50);
 	list->printSLL();
@@ -57,34 +57,40 @@ int main() {
 	x = list->pop();
 	cout << x << endl;
 	list->printSLL();
+
+	cout << "\nPop" << endl;
 	x = list->pop();
 	cout << x << endl;
 	list->printSLL();
 
-//	cout << "\nRemove First" << endl;
-//	x = list->remFirst();
-//	cout << x << endl;
-//	list->printSLL();
-//
-//	cout << "\nRemove First" << endl;
-//	x = list->remFirst();
-//	cout << x << endl;
-//	list->printSLL();
+	cout << "\nRemove First" << endl;
+	x = list->remFirst();
+	cout << x << endl;
+	list->printSLL();
 
-//	cout << "\n Remove kth" << endl;
-//	x = list->remKth(3);
-//	cout << x << endl;
-//	list->printSLL();
-//	x = list->remKth(4);
-//	cout << x << endl;
-//	list->printSLL();
+	cout << "\nRemove First" << endl;
+	x = list->remFirst();
+	cout << x << endl;
+	list->printSLL();
 
+	cout << "\nRemove kth (3rd Element)" << endl;
+	x = list->remKth(3);
+	cout << x << endl;
+	list->printSLL();
+
+	cout << "\nRemove kth (4th Element)" << endl;
+	x = list->remKth(4);
+	cout << x << endl;
+	list->printSLL();
+
+	cout << "\nAdd First (To a new list)" << endl;
 	SLL *l2 = new SLL;
 	l2->addFirst(rand()%50);
 	for (int i = 0; i < 10; i++) {
 		l2->push(rand()%50);
 	}
 	l2->printSLL();
+
 	cout << "\nJoin" << endl;
 	list->join(l2);
 	list->printSLL();
@@ -94,9 +100,12 @@ int main() {
 	list->reverseList();
 	list->printSLL();
 
-/*
-//Testing DLL
-	cout << "DLL" << endl << endl;
+
+	//Testing DLL
+	cout << "\n\n============================\n\nDLL\n" << endl;
+
+	//Generate new list
+	cout << "\nGenerate a new list (push * 42)" << endl;
 	DLL *listd = new DLL;
 	listd->addFirst(rand()%50);
 	listd->printDLL();
@@ -110,47 +119,74 @@ int main() {
 		}
 		listd->printDLL();
 	}
+
+	cout << "\nFind kth(6)" << endl;
 	DNode *s2 = listd->findKth(6);
 	int y2 = s2->getData();
 	cout << y2 << endl;
+
+	cout << "\nFind kth(42)" << endl;
 	int x2 = listd->findK(42);
 	cout << x2 << endl;
+
+	cout << "\nAdd at k" << endl;
 	listd->addAtK(55,4);
 	listd->printDLL();
+
+	cout << "\nAdd at k again" << endl;
 	listd->addAtK(60,0);
 	listd->printDLL();
+
+	cout << "\nPop" << endl;
 	x2 = listd->pop();
 	cout << x2 << endl;
 	listd->printDLL();
+
+	cout << "\nPop again" << endl;
 	x2 = listd->pop();
 	cout << x2 << endl;
 	listd->printDLL();
+
+	cout << "\nRemove First" << endl;
 	x2 = listd->remFirst();
 	cout << x2 << endl;
 	listd->printDLL();
+
+	cout << "\nRemove First again" << endl;
 	x2 = listd->remFirst();
 	cout << x2 << endl;
 	listd->printDLL();
+
+	cout << "\nRemove kth(3)" << endl;
 	x2 = listd->remKth(3);
 	cout << x2 << endl;
 	listd->printDLL();
+
+	cout << "\nRemove kth(4)" << endl;
 	x2 = listd->remKth(4);
 	cout << x2 << endl;
 	listd->printDLL();
+
+	cout << "\nMake a new list" << endl;
 	DLL *ld2 = new DLL;
 	ld2->addFirst(rand()%50);
 	for (int i = 0; i < 8; i++) {
 		ld2->push(rand()%50);
 	}
 	ld2->printDLL();
+
+	cout << "\nJoin" << endl;
 	cout << endl;
 	listd->join(ld2);
 	listd->printDLL();
 	listd->printRevDLL();
 
+	cout << "\nAdd First" << endl;
 	DLL *list1 = new DLL;
 	list1->addFirst(rand()%50);
 	list1->printDLL();
+
+	cout << "\n" << endl;
 	for (int i = 0; i < 8; i++) {
 		if (i == 4) {
 			list1->push(42);
@@ -164,6 +200,7 @@ int main() {
 	list1->sortDLL();
 	list1->printDLL();
 
+	cout << "\nGenerate another new list (push * 42)" << endl;
 	DLL *list2 = new DLL;
 	list2->addFirst(rand()%50);
 	list2->printDLL();
@@ -176,11 +213,16 @@ int main() {
 			list2->push(rand()%50);
 		}
 	}
+
+
 	list2->printDLL();
+
+	cout << "\nSort" << endl;
 	list2->sortDLL();
 	list2->printDLL();
+
+	cout << "\nMerge" << endl;
 	list1->Merge2(list2);
 	list1->printDLL();
-*/
 }
 

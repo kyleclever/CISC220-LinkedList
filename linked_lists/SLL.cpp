@@ -49,7 +49,6 @@ void SLL::printSLL() {
 
 void SLL::addFirst(int x) { // 3 pts
 	first = new SNode (x);
-	//todo
 	last = first;
 	size++;
 	//make a new list of only one node, data is x
@@ -72,11 +71,8 @@ void SLL::addAtFront(int x) {  //3 pts
 
 void SLL::push(int x) { //6 pts
 	//add a new node to the end of the list, with data x
-	//last might be the problem here
-
 	last->next = new SNode(x);
 	last = last -> next;
-
 	size ++;
 
 }
@@ -106,18 +102,22 @@ void SLL::join(SLL *list2){ //3 pts
 }
 
 int SLL::pop() {
-	if (size > 0) {
+	if (size > 0)
+	{
 		int x = last->data;
-		if (first != last ){
+		if (first != last )
+		{
 			SNode *tmp = first;
-			for (int i = 0; i < size-1;i++) {
+			for (int i = 0; i < size-2;i++)
+			{
 				tmp = tmp->next;
 			}
 			delete last;
 			last = tmp;
 			last->next = NULL;
 		}
-		else {
+		else
+		{
 			delete last;
 			first = NULL;
 			last = NULL;
@@ -125,7 +125,8 @@ int SLL::pop() {
 		size --;
 		return x;
 	}
-	else {
+	else
+	{
 		return -1;
 	}
 }
@@ -152,20 +153,25 @@ int SLL::findK(int k) {
 		return -1;
 	}
 }
+
 int SLL::remFirst() { //3 pts
 	//remove the first node from the list, returning its data
-	int data = first->data;
-	SNode *second = first->next;
-	cout << "testing1"<<endl;
-	cout << "First's Data: " << data << endl;
-	delete first;
-	cout << "testin2"<<endl;
-	first = second;
-
-	cout << "testin3"<<endl;
-	size --;
-	return data;
+	if(size == 0)
+	{
+		return 0;
+	}
+	else
+	{
+		int data = first->data;
+		SNode* temp = first;
+		first = first->next;
+		cout << "First's Data: " << data << endl;
+		delete temp;
+		size --;
+		return data;
+	}
 }
+
 int SLL::remKth(int k) {
 	if (k < size && k > 0) {
 		SNode *tmp = first;
@@ -178,6 +184,10 @@ int SLL::remKth(int k) {
 		delete tmp2;
 		return x;
 	}// if
+	else
+	{
+		return 0;
+	}
 }
 
 void SLL::reverseList(){ //10 pts
@@ -189,7 +199,7 @@ void SLL::reverseList(){ //10 pts
 		return;
 	}
 	else
-	{	cout << first->data << ", " <<last->data << endl;
+	{
 		SNode* p1 = first;
 		SNode* p2 = first->next;
 		SNode* p3 = first->next->next;
@@ -197,9 +207,7 @@ void SLL::reverseList(){ //10 pts
 		SNode* temp = first;
 		first = last;
 		last = temp;
-		cout << first->data << ", " << last->data << endl;
 		reverse(p1,p2,p3);
-		cout << first->data << ", " << last->data << endl;
 	}
 }
 
@@ -207,7 +215,7 @@ void SLL::reverse(SNode* p1, SNode* p2, SNode* p3)
 {
 	if(p3 == NULL)
 	{	p2->next = p1;
-		return;
+	return;
 	}
 	else
 	{

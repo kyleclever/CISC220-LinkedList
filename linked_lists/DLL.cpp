@@ -146,6 +146,8 @@ int DLL::findK(int k) {
 		return -1;
 	}
 }
+
+
 int DLL::remFirst() { //2 pts
 	//remove the first node from the list, returning its data
 	int data = first->data;
@@ -159,6 +161,7 @@ int DLL::remFirst() { //2 pts
 	size --;
 	return data;
 }
+
 int DLL::remKth(int k) { //4 pts
 	//remove the kth element of the list, returning its data
 	if (k < size && k > 0) {
@@ -172,6 +175,10 @@ int DLL::remKth(int k) { //4 pts
 		delete tmp2;
 		return x;
 	}// if
+	else
+	{
+		return 0;
+	}
 }
 void DLL::RecursiveReverse(DLL *l2){
 	//If there's only 1 node...
